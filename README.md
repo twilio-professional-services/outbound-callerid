@@ -12,6 +12,8 @@ A [beforeStarOutboundCall](
 https://assets.flex.twilio.com/docs/releases/flex-ui/1.27.0/Actions.html#.StartOutboundCall)
 action listener is added to override the `payload.callerId` attribute with the selected caller Id.
 
+<img width="500px" src="images/callerId.png"/>
+
 
 # Configuration
 

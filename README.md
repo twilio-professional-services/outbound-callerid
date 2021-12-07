@@ -14,6 +14,7 @@ action listener is added to override the `payload.callerId` attribute with the s
 
 <img width="500px" src="images/callerId.png"/>
 
+Additionally this plugin includes functionality to play an announcement to both the customer and agent/worker that the Call May Be Recorded for Quality Purposes.  After the outbound call task reservation has been accepted by the worker, the plugin waits for the customer to join the conference before [updating the conference with the announceUrl](https://www.twilio.com/docs/voice/api/conference-resource?code-sample=code-update-a-conference-to-announce-something&code-language=Node.js&code-sdk-version=3.x)
 
 # Configuration
 

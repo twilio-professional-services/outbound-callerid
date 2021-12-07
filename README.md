@@ -6,7 +6,7 @@ Twilio Flex Plugins allow you to customize the appearance and behavior of [Twili
 ## How it works
 This Flex plugin add a Caller Id selection menu to the Dialpad to allow agents making outbound calls to pick the appropriate Outbound Caller Id for each call.
 
-This plugin leverages a Twilio Function to read the list of caller Ids from an Json config file asset upon initialization. The array is stored in the application's Redux store.  
+This plugin leverages a Twilio Function to read the list of caller Ids from an Json config file asset upon initialization. The array is stored in the application's Redux store.  This config file should be updated with the Phone Numbers you have provisioned in your Twilio account.  Since customers could call you back on these numbers, they should route back into your Flex application through Studio Flows & TaskRouter.
 
 A [beforeStarOutboundCall](
 https://assets.flex.twilio.com/docs/releases/flex-ui/1.27.0/Actions.html#.StartOutboundCall)

@@ -142,6 +142,11 @@ export default class OutboundCalleridPlugin extends FlexPlugin {
       console.log(PLUGIN_NAME, 'Conference Task Data:', task);
       const conferenceSid = task.attributes.conference.sid;
       const announceUrl = "https://handler.twilio.com/twiml/EHf04f98deab4ed4ec514fde9365a92231";
+      //Replace announceUrl with mp3 file or create a new Twiml Bin with this Twiml
+      //<Response>
+      //<Say>This call will be recorded for training and monitoring purposes</Say>
+      //</Response>
+
       const conf = await ConfigUtil.updateConference(confSid, announceUrl);
       console.log(PLUGIN_NAME, 'Updated Conference:', conf);
 

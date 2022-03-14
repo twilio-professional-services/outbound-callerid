@@ -82,7 +82,7 @@ export default class OutboundCalleridPlugin extends FlexPlugin {
 
     const waitForConferenceParticipants = (task) => new Promise(resolve => {
       const waitTimeMs = 100;
-      // For outbound calls, the customer participant doesn't join the conference 
+      // For outbound calls, the customer participant doesn't join the conference
       // until the called party answers. Need to allow enough time for that to happen.
       const maxWaitTimeMs = 60000;
       let waitForConferenceInterval = setInterval(async () => {
@@ -125,7 +125,7 @@ export default class OutboundCalleridPlugin extends FlexPlugin {
     const handleAcceptedCall = async (task) => {
       const { attributes } = task;
 
-      // We want to wait for all participants (customer and worker) 
+      // We want to wait for all participants (customer and worker)
       console.debug(PLUGIN_NAME, 'Waiting for customer and worker to join the conference');
       const conference = await waitForConferenceParticipants(task);
 
@@ -141,7 +141,7 @@ export default class OutboundCalleridPlugin extends FlexPlugin {
       //Should be same as conf sid from task...
       console.log(PLUGIN_NAME, 'Conference Task Data:', task);
       const conferenceSid = task.attributes.conference.sid;
-      const announceUrl = "https://handler.twilio.com/twiml/EHf04f98deab4ed4ec514fde9365a92231";
+      const announceUrl = process.env.FLEX_APP_ANNOUNCE_URL;
       //Replace announceUrl with mp3 file or create a new Twiml Bin with this Twiml
       //<Response>
       //<Say>This call will be recorded for training and monitoring purposes</Say>

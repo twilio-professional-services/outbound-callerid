@@ -23,7 +23,7 @@ Create a new Twiml Bin with this Twiml:
     <Say>This call will be recorded for training and monitoring purposes</Say>
 </Response>
 ```
-Next update the `announceUrl` variable with your Twiml Bin URL (or link to mp3/wav file)
+Next update the `FLEX_APP_ANNOUNCE_URL` environment variable with your Twiml Bin URL (or link to mp3/wav file)
 
 # Configuration
 

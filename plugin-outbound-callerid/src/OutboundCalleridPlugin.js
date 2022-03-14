@@ -24,26 +24,18 @@ export default class OutboundCalleridPlugin extends FlexPlugin {
   async init(flex, manager) {
     this.registerReducers(manager);
 
-    let callerIds = [
-      // {
-      //   'phoneNumber': '+18044558186',
-      //   'friendlyName': 'Virginia'
-      // },
-      // {
-      //   'phoneNumber': '+16156479890',
-      //   'friendlyName': 'Tennessee'
-      // },
-      {
-        'phoneNumber': '+19382225071',
-        'friendlyName': 'Alabama'
-      }
-    ];
+    let callerIds = [];
 
     const configFile = "/config.json";
     let data = await ConfigUtil.getAsset(configFile);
     if (data) {
       console.log(PLUGIN_NAME, 'Asset data: ', data);
       callerIds = data.callerIds;
+    } else {
+      callerIds = [{
+        "phoneNumber": manager.serviceConfiguration.outbound_call_flows.default.caller_id,
+        "friendlyName": "Default"
+      }]
     }
 
 

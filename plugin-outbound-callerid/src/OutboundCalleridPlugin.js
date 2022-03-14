@@ -50,7 +50,12 @@ export default class OutboundCalleridPlugin extends FlexPlugin {
 
     manager.store.dispatch(NumberSelectActions.setCallerIds(callerIds));
     //Set initial caller id
-    manager.store.dispatch(NumberSelectActions.updateNumber(callerIds[0].phoneNumber))
+    if(manager.workerClient.attributes.lastSelectedCallerId) {
+      console.log(PLUGIN_NAME, 'Found a previous caller id: ', manager.workerClient.attributes.lastSelectedCallerId);
+      manager.store.dispatch(NumberSelectActions.updateNumber(manager.workerClient.attributes.lastSelectedCallerId));
+    } else {
+      manager.store.dispatch(NumberSelectActions.updateNumber(callerIds[0].phoneNumber))
+    }
 
 
     flex.OutboundDialerPanel.Content.add(

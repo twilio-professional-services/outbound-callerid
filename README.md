@@ -16,15 +16,6 @@ action listener is added to override the `payload.callerId` attribute with the s
 
 Additionally this plugin includes functionality to play an announcement to both the customer and agent/worker that the Call May Be Recorded for Quality Purposes.  After the outbound call task reservation has been accepted by the worker, the plugin waits for the customer to join the conference before [updating the conference with the announceUrl](https://www.twilio.com/docs/voice/api/conference-resource?code-sample=code-update-a-conference-to-announce-something&code-language=Node.js&code-sdk-version=3.x)
 
-Create a new Twiml Bin with this Twiml:
-
-```
-<Response>
-    <Say>This call will be recorded for training and monitoring purposes</Say>
-</Response>
-```
-Next update the `FLEX_APP_ANNOUNCE_URL` environment variable with your Twiml Bin URL (or link to mp3/wav file)
-
 # Configuration
 
 ## Requirements
@@ -94,6 +85,16 @@ cp .env.example .env
 ```
 
 Edit `.env` and set the `FLEX_APP_FUNCTIONS_BASE` variable to your Twilio Functions base URL (like https://config-functions-xxxx-dev.twil.io). 
+
+Create a new Twiml Bin in Flex with this Twiml:
+
+```
+<Response>
+    <Say>This call will be recorded for training and monitoring purposes</Say>
+</Response>
+```
+Update the `FLEX_APP_ANNOUNCE_URL` variable with your Twiml Bin URL (or link to mp3/wav file if you so prefer)
+
 
 To run the plugin locally, you can use the Twilio Flex CLI plugin. Using your command line, run the following from the root directory of the plugin.
 

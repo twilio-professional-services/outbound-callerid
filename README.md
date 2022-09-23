@@ -3,6 +3,10 @@
 Twilio Flex Plugins allow you to customize the appearance and behavior of [Twilio Flex](https://www.twilio.com/flex). If you want to learn more about the capabilities and how to use the API, check out our [Flex documentation](https://www.twilio.com/docs/flex).
 
 
+## Notice
+
+This plugin is no longer maintained as of September 23, 2022.  Work to support this feature in Flex v2 has been transitioned to the [Twilio Professional Services Flex Project Template](https://github.com/twilio-professional-services/twilio-proserv-flex-project-template/tree/main/plugin-flex-ts-template-v2/src/feature-library/caller-id).
+
 ## How it works
 This Flex plugin add a Caller Id selection menu to the Dialpad to allow agents making outbound calls to pick the appropriate Outbound Caller Id for each call.
 

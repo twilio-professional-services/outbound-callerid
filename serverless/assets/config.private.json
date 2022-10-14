@@ -11,6 +11,10 @@
     {
       "phoneNumber": "+19382225071",
       "friendlyName": "Alabama"
+    },
+    {
+      "phoneNumber": "+18587588840",
+      "friendlyName": "California"
     }
   ],
   "config-key": "config-value"
